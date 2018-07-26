@@ -1,4 +1,4 @@
-Edubuy is an classified website app devloped with Codeigniter(php) and is specifically designed for GGSIPU Delhi Engineering college but can be applied to any college by just modifying according to one own need.
+Edubuy is an classified website app devloped with Codeigniter(php) and is specifically designed for GGSIPU Delhi Engineering colleges but can be applied to any need by just modifying some code.
 
 
 
