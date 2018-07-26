@@ -1,0 +1,249 @@
+     <!-- Categories -->
+	<!--Vertical Tab-->
+	
+				
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+					aria-hidden="true">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+										&times;</button>
+									<h4 class="modal-title" id="myModalLabel">
+										Please Select your college</h4>
+										<?php echo $this->mylib->collegeselect(); ?>
+								</div>
+								<div class="modal-body">
+									 <form class="form-horizontal" role="form">
+										<div class="form-group">
+											
+										</div>
+									  </form>    
+								</div>
+							</div>
+						</div>
+					</div>
+				<script>
+				$('#myModal').modal('');
+				 
+				</script>
+
+				<script >
+					$(document).ready(function(){
+							    $("#college_id").change(function(){
+							        var college_id = $("#college_id").val();
+							        var url = '<?= site_url('Ads/setcollege'); ?>';
+							        
+
+							        $.ajax({
+								      type:'POST',
+								      url:'<?= site_url('Ads/setcollege'); ?>',
+								      data:{college:college_id},
+								       success:function(html){
+								       
+							    	    
+								      }
+								      
+
+								    });
+
+								    $(".close").click();
+							        
+							        
+							        
+							    });
+							});
+				</script>
+			
+
+
+
+
+
+	<div class="categories-section main-grid-border">
+		<div class="container">
+			<h2 class="head">Main Categories</h2>
+			<div class="category-list">
+				<div id="parentVerticalTab">
+					<ul class="resp-tabs-list hor_1">
+						<li>Mobiles</li>
+						<li>Electronics & Appliances</li>
+						<li>Stationary</li>
+						<li>Transportation</li>
+						<li>Furniture</li>
+						
+						<li>Books, Sports & Hobbies</li>
+						
+						
+						<a href="<?= site_url('AllAds'); ?>">All Ads</a>
+					</ul>
+					<div class="resp-tabs-container hor_1">
+						<span class="active total" style="display:block;" data-toggle="modal" data-target="#myModal"><strong>All Ads</strong> (Select your college to see local Ads)</span>
+						<div>
+							<div class="category">
+								<div class="category-img">
+									<img src="<?= base_url('images/cat1.png'); ?>" title="image" alt="" />
+								</div>
+								<div class="category-info">
+									<h4>Mobiles</h4>
+									<span><?php if(isset($ads_count[0]['count(AdId)'])) {echo $ads_count[0]['count(AdId)'];} ?> Ads</span>
+									<a href="<?= site_url('Mobiles/1'); ?>">View all Ads</a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="sub-categories">
+								<ul>
+									<li><a href="<?= site_url('Mobiles-Phones/1'); ?>">mobile phones</a></li>
+									<li><a href="<?= site_url('Tablets/2'); ?>">Tablets</a></li>
+									<li><a href="<?= site_url('Mobile-Accessories/3'); ?>">Accessories</a></li>
+									<div class="clearfix"></div>
+								</ul>
+							</div>
+						</div>
+						<div>
+							<div class="category">
+								<div class="category-img">
+									<img src="<?= base_url('images/cat2.png'); ?>" title="image" alt="" />
+								</div>
+								<div class="category-info">
+									<h4>Electronics & Appliances</h4>
+									<span><?php if(isset($ads_count[1]['count(AdId)'])) {echo $ads_count[1]['count(AdId)'];} ?> Ads</span>
+									<a href="<?= site_url('Eletronics-Appliances/2'); ?>">View all Ads</a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="sub-categories">
+								<ul>
+									<li><a href="<?= site_url('Computers-Accessories/4'); ?>"><?= $this->mylib->categories_name('4'); ?></a></li>
+									<li><a href="<?= site_url('Tv-Video-Audio/5'); ?>"><?= $this->mylib->categories_name('5'); ?></a></li>
+									<li><a href="<?= site_url('Cameras-Accessories/6'); ?>"><?= $this->mylib->categories_name('6'); ?></a></li>
+									<li><a href="<?= site_url('Games-Entertainment/7'); ?>"><?= $this->mylib->categories_name('7'); ?></a></li>
+									<li><a href="<?= site_url('Fridge-AC-Washing Machine/8'); ?>"><?= $this->mylib->categories_name('8'); ?></a></li>
+									<li><a href="<?= site_url('Kitchen-other-Appliances/9'); ?>"><?= $this->mylib->categories_name('9'); ?></a></li>
+									<div class="clearfix"></div>
+								</ul>
+							</div>
+						</div>
+						<div>
+							<div class="category">
+								<div class="category-img">
+									<img src="<?= base_url('images/stationary.png'); ?>" title="image" alt="" />
+								</div>
+								<div class="category-info">
+									<h4>Stationary</h4>
+									<span><?php if(isset($ads_count[2]['count(AdId)'])){echo $ads_count[2]['count(AdId)'];} ?> Ads</span>
+									<a href="<?= site_url('Stationary/3'); ?>">View all Ads</a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="sub-categories">
+								<ul>
+									<li><a href="<?= site_url('Drafter-Sheet-Holder/10'); ?>"><?= $this->mylib->categories_name('10'); ?></a></li>
+									<li><a href="<?= site_url('Calculator/11'); ?>"><?= $this->mylib->categories_name('11'); ?></a></li>
+									<li><a href="<?= site_url('Lab-Coat/12'); ?>"><?= $this->mylib->categories_name('12'); ?></a></li>
+									<li><a href="<?= site_url('Notes/27'); ?>"><?= $this->mylib->categories_name('27'); ?></a></li>
+									<div class="clearfix"></div>
+								</ul>
+							</div>
+						</div>
+						<div>
+							<div class="category">
+								<div class="category-img">
+									<img src="<?= base_url('images/cat3.png'); ?>" title="image" alt="" />
+								</div>
+								<div class="category-info">
+									<h4>Transportation</h4>
+									<span><?php if(isset($ads_count[3]['count(AdId)'])) {echo $ads_count[3]['count(AdId)'];} ?> Ads</span>
+									<a href="<?= site_url('Transportation/4'); ?>">View all Ads</a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="sub-categories">
+								<ul>
+									<li><a href="<?= site_url('MotorCycles/13'); ?>"><?= $this->mylib->categories_name('13'); ?></a></li>
+									<li><a href="<?= site_url('Scooters/14'); ?>"><?= $this->mylib->categories_name('14'); ?></a></li>
+									<li><a href="<?= site_url('Bicycles/15'); ?>"><?= $this->mylib->categories_name('15'); ?></a></li>
+									<li><a href="<?= site_url('Cars/16'); ?>"><?= $this->mylib->categories_name('16'); ?></a></li>
+									<li><a href="<?= site_url('Spare-Parts/17'); ?>"><?= $this->mylib->categories_name('17'); ?></a></li>
+									<div class="clearfix"></div>
+								</ul>
+							</div>
+						</div>
+						<div>
+							<div class="category">
+								<div class="category-img">
+									<img src="<?= base_url('images/cat5.png'); ?>" title="image" alt="" />
+								</div>
+								<div class="category-info">
+									<h4>Furniture</h4>
+									<span><?php if(isset($ads_count[4]['count(AdId)'])) {echo $ads_count[4]['count(AdId)'];} ?> Ads</span>
+									<a href="<?= site_url('Furnitures/5'); ?>">View all Ads</a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="sub-categories">
+								<ul>
+									<li><a href="<?= site_url('Sofa-Dining/18'); ?>"><?= $this->mylib->categories_name('18'); ?></a></li>
+									<li><a href="<?= site_url('Beds-Wardrobes/19'); ?>"><?= $this->mylib->categories_name('19'); ?></a></li>
+									<li><a href="<?= site_url('Home_Decor-Garden/20'); ?>"><?= $this->mylib->categories_name('20'); ?></a></li>
+									<li><a href="<?= site_url('Other_Household_item/21'); ?>"><?= $this->mylib->categories_name('21'); ?></a></li>
+									<div class="clearfix"></div>
+								</ul>
+							</div>
+						</div>
+						
+						<div>
+							<div class="category">
+								<div class="category-img">
+									<img src="<?= base_url('images/cat7.png'); ?>" title="image" alt="" />
+								</div>
+								<div class="category-info">
+									<h4>Books, Sports & Hobbies</h4>
+									<span><?phpif(isset($ads_count[5]['count(AdId)'])) {echo $ads_count[5]['count(AdId)'];} ?> Ads</span>
+									<a href="<?= site_url('Books-Hobby-Sports/6'); ?>">View all Ads</a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="sub-categories">
+								<ul>
+									<li><a href="<?= site_url('Books-Magazines/22'); ?>"><?= $this->mylib->categories_name('22'); ?></a></li>
+									<li><a  href="<?= site_url('Sports_Equipment/23'); ?>"><?= $this->mylib->categories_name('23'); ?></a></li>
+									<li><a  href="<?= site_url('Gym-Fitness/24'); ?>"><?= $this->mylib->categories_name('24'); ?></a></li>
+									<li><a  href="<?= site_url('Musical_Instrument/25'); ?>"><?= $this->mylib->categories_name('25'); ?></a></li>
+									<li><a  href="<?= site_url('Other-Hobbies/26'); ?>"><?= $this->mylib->categories_name('26'); ?></a></li>
+									<div class="clearfix"></div>
+								</ul>
+							</div>
+						
+						
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Plug-in Initialisation-->
+	<script type="text/javascript">
+    $(document).ready(function() {
+
+        //Vertical Tab
+        $('#parentVerticalTab').easyResponsiveTabs({
+            type: 'vertical', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo2');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+    });
+</script>
+	<!-- //Categories -->
+	<!--footer section start-->		
+		
